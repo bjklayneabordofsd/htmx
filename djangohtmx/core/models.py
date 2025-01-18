@@ -6,7 +6,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(default=defaultBody)
     updated = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(auto_now_add=False)
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-updated']

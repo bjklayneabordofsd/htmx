@@ -1,0 +1,12 @@
+<div id="post--1" class="post-preview-container">
+    <div class="post--preview">
+        <strong>{{post.title}}</strong>
+        <small>{{post.body | truncatewords:20}}</small>
+    </div>
+    <div class="controls">
+        <small>Edited 9 minutes ago</small>
+        <div>
+            {% include 'icons/trash.html' %}
+        </div>
+    </div>
+</div>

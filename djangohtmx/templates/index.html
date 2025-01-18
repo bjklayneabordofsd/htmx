@@ -5,11 +5,25 @@
 
     <div id="stories--header">
         <h3 id="total">Stories</h3>
-        <button  class="btn">Write a story</button>
+        <!-- 
+            hx-trigger="click": Triggers the AJAX request when the button is clicked.
+            hx-post="/api/posts/": Specifies the URL where the POST request will be sent.
+            hx-target="#post--snippets": Defines the target element where the server response will be inserted.
+            hx-swap="afterbegin": Determines how the response should be inserted into the target element (at the beginning).
+        -->
+        <button  
+            class="btn"
+            hx-trigger="click"
+            hx-post="/api/posts/"
+            hx-target="#post--snippets"
+            hx-swap="afterbegin"
+        >Write a story</button>
     </div>
 
     <div id="post--snippets">
-
+        {% for post in posts %}
+            {% include 'components/snippet.html' %}
+        {% endfor %}
     </div>
 </div>
 

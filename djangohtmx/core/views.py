@@ -3,5 +3,6 @@ from .models import Post
 
 def index(request):
     posts = Post.objects.all()
-    context = {'posts':posts}
+    total = Post.objects.count()
+    context = {'posts':posts, 'total':total}
     return render(request, 'index.html', context)
